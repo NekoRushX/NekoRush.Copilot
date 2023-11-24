@@ -19,10 +19,6 @@ public class Program
 
     public static void Main(string[] cmdline)
     {
-        cmdline = new string[2];
-        cmdline[0] = "--proj=C:\\Users\\Cirno\\Desktop\\NekoRush.Copilot.BuildTools\\NekoRush.Copilot.Test\\Test.csproj";
-        cmdline[1] = "--out=C:\\Users\\Cirno\\Desktop\\NekoRush.Copilot.BuildTools\\NekoRush.Copilot.Test\\obj\\Debug\\net7.0\\Copilot";
-
         Print("------ NekoRush.Copilot.BuildTools ------");
 
         // Get project path from cmdline
