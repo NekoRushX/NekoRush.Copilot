@@ -1,0 +1,51 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <AssemblyName>NekoRush.Copilot.BuildTools</AssemblyName>
+        <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+        <IncludeBuildOutput>false</IncludeBuildOutput>
+        <Description>Copilot sourcecode generator</Description>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <NoPackageAnalysis>true</NoPackageAnalysis>
+        <DevelopmentDependency>true</DevelopmentDependency>
+        <LangVersion>latest</LangVersion>
+        <OutputType>Exe</OutputType>
+    </PropertyGroup>
+
+
+    <!-- Package definition -->
+    <PropertyGroup>
+        <Product>NekoRush.Copilot.BuildTools</Product>
+        <Authors>TheSnowfield</Authors>
+        <Copyright>NekoRush (C) $([System.DateTime]::Now.Year)</Copyright>
+        <Description>Copilot sourcecode generator</Description>
+
+        <PackageVersion>1.0.0</PackageVersion>
+        <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+        <PackageLicenseFile>LICENSE</PackageLicenseFile>
+
+        <RepositoryType>Git</RepositoryType>
+        <RepositoryUrl>https://github.com/NekoRushX/NekoRush.Copilot</RepositoryUrl>
+
+        <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    </PropertyGroup>
+
+        <!-- Files -->
+    <ItemGroup>
+        <None Include="..\LICENSE" Pack="true" PackagePath=""/>
+    </ItemGroup>
+
+
+    <ItemGroup>
+        <None Include="$(OutputPath)/NekoRush.JsonChan.dll" Pack="true" PackagePath="build" Visible="false"/>
+        <None Include="$(OutputPath)/$(AssemblyName).dll" Pack="true" PackagePath="build" Visible="false"/>
+        <None Include="$(OutputPath)/$(AssemblyName).runtimeconfig.json" Pack="true" PackagePath="build" Visible="false"/>
+        <None Include="$(AssemblyName).targets" Pack="true" PackagePath="build" Visible="false"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="NekoRush.JsonChan" Version="1.0.1" PrivateAssets="all"/>
+    </ItemGroup>
+
+</Project>

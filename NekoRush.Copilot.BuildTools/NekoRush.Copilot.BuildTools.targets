@@ -1,0 +1,19 @@
+﻿<Project>
+
+  <Target Name="CopilotGenerator" BeforeTargets="BeforeBuild;BeforeRebuild">
+
+    <!-- Mkdir for generated files -->
+    <MakeDir Directories="$(IntermediateOutputPath)/Copilot"/>
+
+    <!-- Hmmm.. Let GPT decide how to write the code by the prompt -->
+    <Exec Command="dotnet $(MSBuildThisFileDirectory)NekoRush.Copilot.BuildTools.dll --proj='$(ProjectPath)' --out='$(IntermediateOutputPath)Copilot'"/>
+
+    <!-- Compile including -->
+    <ItemGroup>
+      <Compile Include="$(IntermediateOutputPath)Copilot/*.cs"/>
+      <FileWrites Include="$(IntermediateOutputPath)Copilot/*.cs"/>
+    </ItemGroup>
+
+  </Target>
+
+</Project>

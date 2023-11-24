@@ -1,0 +1,14 @@
+Please do not return any message except the code, Use C# to write the code.
+The namespace is `Test`, and the class name is `Program`.
+
+Write a standard main method, it creates a command router with `Directory<string, ICommand>`.
+
+All the commands use the same interface, you should add it to the code.
+interface ICommand {
+    void Execute(string[] args);
+}
+
+Use `Activator.CreateInstance` to create `Add` and `Echo` objects, and add them to the router.
+You do not need to declare the `Add` or `Echo` in the code, them has been declared in another file.
+
+Finally, accepts the command from the stdin. route and run them.

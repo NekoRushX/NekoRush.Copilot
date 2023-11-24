@@ -1,0 +1,10 @@
+Please do not return any message except the code, Use C# to write the code.
+The namespace is `Test`, and the class name is `Add`, inherited from the `ICommand`.
+
+The `ICommand` is declared as:
+interface ICommand {
+    void Execute(string[] args);
+}
+
+This class receives arguments from `args`, x and y.
+Effect to add x and y, then print the result into the console.

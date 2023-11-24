@@ -1,0 +1,10 @@
+Please do not return any message except the code, Use C# to write the code.
+The namespace is `Test`, and the class name is `Echo`, inherited from the `ICommand`.
+
+The `ICommand` is declared as:
+interface ICommand {
+    void Execute(string[] args);
+}
+
+This class receives one argument from `args`,
+Only print the arg into the console directly.

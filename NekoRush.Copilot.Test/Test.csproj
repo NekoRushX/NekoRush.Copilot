@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <!-- Language features -->
+    <PropertyGroup>
+        <LangVersion>latest</LangVersion>
+        <TargetFramework>net7.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <IsPackable>false</IsPackable>
+        <OutputType>Exe</OutputType>
+    </PropertyGroup>
+
+    <!-- References -->
+    <ItemGroup>
+        <PackageReference Include="NekoRush.Copilot.BuildTools" Version="1.0.0">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+    </ItemGroup>
+
+    <!-- Copilot Files -->
+    <ItemGroup>
+        <CopilotApi Remove="None" Api="https://api.openai.com/v1/chat/completions" ApiKey="YOUR API KEY" Model="gpt-3.5-turbo-1106" />
+        <CopilotGenerate Include="Commands\Add.prompt" />
+        <CopilotGenerate Include="Commands\Echo.prompt" />
+        <CopilotGenerate Include="Main.prompt" />
+    </ItemGroup>
+
+</Project>
